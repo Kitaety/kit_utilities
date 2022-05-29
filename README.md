@@ -1,16 +1,8 @@
-# kit_utilities
 
-A new Flutter project.
+# Kit Utilities
 
-## Getting Started
+## Connect Android for Wi-fi debbug
 
-This project is a starting point for a Flutter application.
+1. Open terminal
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Run command `adb connect ipaddress:port`. For expamle `adb connect 192.168.100.3:38729`
