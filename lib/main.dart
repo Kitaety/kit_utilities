@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:kit_utilities/blocs/bloc/exchange_rates_bloc.dart';
 import 'package:kit_utilities/blocs/cubit/preferences_cubit.dart';
-import 'package:kit_utilities/states/preferences_state.dart';
+import 'package:kit_utilities/blocs/states/preferences_state.dart';
 import 'package:kit_utilities/widgets/app.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(const MyApp());
 }
 
@@ -15,14 +22,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<PreferencesCubit>(
-          create: (_) => PreferencesCubit(),
-          dispose: (context, value) => value.close(),
-        ),
+        Provider<PreferencesCubit>(create: (_) => PreferencesCubit()),
+        Provider<ExchangeRatesBloc>(create: (_) => ExchangeRatesBloc()),
       ],
-      // child: StreamBuilder<PreferencesState>(
-      // stream: Provider.of<PreferencesCubit>(context).stream,
-      // builder: (context, snapshot) {
       child: Builder(builder: (context) {
         PreferencesCubit cubit = Provider.of<PreferencesCubit>(context);
         return StreamBuilder<PreferencesState>(
@@ -38,8 +40,5 @@ class MyApp extends StatelessWidget {
         );
       }),
     );
-    // );
-    // }),
-    // );
   }
 }

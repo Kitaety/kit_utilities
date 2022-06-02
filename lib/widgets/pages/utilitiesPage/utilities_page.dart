@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:kit_utilities/widgets/pages/utilitiesPage/utility_icon.dart';
 
@@ -25,19 +27,34 @@ class _UtilitiesPageState extends State<UtilitiesPage> {
                 UtilityIcon(
                   icon: Icons.attach_money_rounded,
                   label: 'Exchange Rates',
-                  onPressed: () => {print('test')},
+                  onPressed: () => {
+                    log(
+                      'test',
+                      time: DateTime.now(),
+                    )
+                  },
                   color: Colors.yellow,
                 ),
                 UtilityIcon(
                   icon: Icons.access_alarm,
                   label: 'Alarm',
-                  onPressed: () => {print('test')},
+                  onPressed: () => {
+                    log(
+                      'test',
+                      time: DateTime.now(),
+                    )
+                  },
                   color: Colors.red,
                 ),
                 UtilityIcon(
                   icon: Icons.account_circle,
                   label: 'Account',
-                  onPressed: () => {print('test')},
+                  onPressed: () => {
+                    log(
+                      'test',
+                      time: DateTime.now(),
+                    )
+                  },
                   color: Colors.blue,
                 ),
               ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kit_utilities/blocs/cubit/preferences_cubit.dart';
-import 'package:kit_utilities/widgets/exchangeRates/exchange_rates_widget.dart';
+import 'package:kit_utilities/widgets/exchangeRates/exchange_rates_widget/exchange_rates_widget.dart';
 import 'package:provider/provider.dart';
 
 class WidgetsPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _WidgetsPageState extends State<WidgetsPage> {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       children: [
-        ExchangeRatesWidget(),
+        const ExchangeRatesWidget(),
         Consumer<PreferencesCubit>(
           builder: (context, value, child) => Card(
             child: Padding(
